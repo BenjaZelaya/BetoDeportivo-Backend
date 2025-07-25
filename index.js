@@ -8,27 +8,23 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 📁 Ruta absoluta al JSON
-const archivoProductos = path.join(__dirname, 'productos.json');
-
-// 📁 Carpeta de imágenes
-const uploadDir = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
-
-// 📸 Configurar Multer
+// === Configuración de MULTER para subir imágenes ===
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, uploadDir),
+  destination: (req, file, cb) => {
+    const uploadDir = path.join(__dirname, 'uploads');
+    if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
+    cb(null, uploadDir);
+  },
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
-    cb(null, `${Date.now()}${ext}`);
+    const nombreArchivo = `${Date.now()}${ext}`;
+    cb(null, nombreArchivo);
   }
 });
 const upload = multer({ storage });
 
-// 📂 Servir imágenes estáticas
-app.use('/uploads', express.static(uploadDir));
-
-// 🔁 Productos
+// === Productos ===
+const archivoProductos = path.join(__dirname, 'productos.json');
 let productos = [];
 let idCounter = 1;
 
@@ -46,30 +42,39 @@ function guardarProductos() {
 }
 cargarProductos();
 
-// 📍 Obtener todos los productos
-app.get('/api/productos', (req, res) => res.json(productos));
+// Servir imágenes
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// 🔍 Buscar por nombre
+// === Rutas de productos ===
+app.get('/api/productos', (req, res) => {
+  res.json(productos);
+});
+
 app.get('/api/productos/buscar', (req, res) => {
   const { q } = req.query;
-  if (!q || q.trim() === '') return res.status(400).json({ message: 'Término requerido' });
-  const resultado = productos.filter(p => p.nombre.toLowerCase().includes(q.toLowerCase()));
+  if (!q || q.trim() === '') {
+    return res.status(400).json({ message: 'Término de búsqueda requerido' });
+  }
+
+  const resultado = productos.filter(p =>
+    p.nombre.toLowerCase().includes(q.toLowerCase())
+  );
+
   res.json(resultado);
 });
 
-// 🔎 Por ID
 app.get('/api/productos/:id', (req, res) => {
-  const producto = productos.find(p => p.id === parseInt(req.params.id));
+  const id = parseInt(req.params.id);
+  const producto = productos.find(p => p.id === id);
   if (!producto) return res.status(404).json({ message: 'Producto no encontrado' });
   res.json(producto);
 });
 
-// ➕ Crear producto
 app.post('/api/productos', upload.array('imagenes', 5), (req, res) => {
   const { nombre, descripcion, precio, stock, sexo, categoria, color, portadaIndex } = req.body;
 
   if (!nombre || !descripcion || !precio || !stock || !sexo || !categoria || !color || req.files.length === 0) {
-    return res.status(400).json({ message: 'Todos los campos son obligatorios' });
+    return res.status(400).json({ message: 'Todos los campos son obligatorios (incluidas imágenes)' });
   }
 
   const imagenes = req.files.map(file => `/uploads/${file.filename}`);
@@ -99,7 +104,6 @@ app.post('/api/productos', upload.array('imagenes', 5), (req, res) => {
   res.status(201).json(nuevoProducto);
 });
 
-// ✏️ Editar producto
 app.put('/api/productos/:id', upload.array('imagenes', 5), (req, res) => {
   const id = parseInt(req.params.id);
   const producto = productos.find(p => p.id === id);
@@ -119,6 +123,7 @@ app.put('/api/productos/:id', upload.array('imagenes', 5), (req, res) => {
   if (req.files && req.files.length > 0) {
     const nuevasImagenes = req.files.map(file => `/uploads/${file.filename}`);
     producto.imagenes = nuevasImagenes;
+
     const indexPortada = parseInt(portadaIndex);
     producto.portada = (!isNaN(indexPortada) && indexPortada >= 0 && indexPortada < nuevasImagenes.length)
       ? nuevasImagenes[indexPortada]
@@ -129,7 +134,6 @@ app.put('/api/productos/:id', upload.array('imagenes', 5), (req, res) => {
   res.json(producto);
 });
 
-// 🗑️ Eliminar producto
 app.delete('/api/productos/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const index = productos.findIndex(p => p.id === id);
@@ -137,11 +141,69 @@ app.delete('/api/productos/:id', (req, res) => {
 
   productos.splice(index, 1);
   guardarProductos();
+
   res.json({ message: 'Producto eliminado correctamente' });
 });
 
-// 🚀 Iniciar servidor
+
+// === Usuarios ===
+const archivoUsuarios = path.join(__dirname, 'usuarios.json');
+let usuarios = [];
+
+function cargarUsuarios() {
+  if (fs.existsSync(archivoUsuarios)) {
+    const data = fs.readFileSync(archivoUsuarios, 'utf-8');
+    usuarios = JSON.parse(data);
+  } else {
+    usuarios = [];
+  }
+}
+function guardarUsuarios() {
+  fs.writeFileSync(archivoUsuarios, JSON.stringify(usuarios, null, 2), 'utf-8');
+}
+cargarUsuarios();
+
+app.post('/api/register', (req, res) => {
+  const { nombre, email, password } = req.body;
+
+  if (!nombre || !email || !password) {
+    return res.status(400).json({ message: 'Todos los campos son obligatorios' });
+  }
+
+  if (nombre.trim().length < 2) {
+    return res.status(400).json({ message: 'El nombre debe tener al menos 2 caracteres' });
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ message: 'El correo electrónico no es válido' });
+  }
+
+  if (password.length < 6) {
+    return res.status(400).json({ message: 'La contraseña debe tener al menos 6 caracteres' });
+  }
+
+  const existe = usuarios.find(u => u.email === email);
+  if (existe) {
+    return res.status(409).json({ message: 'El correo ya está registrado' });
+  }
+
+  const nuevoUsuario = {
+    id: Date.now(),
+    nombre,
+    email,
+    password
+  };
+
+  usuarios.push(nuevoUsuario);
+  guardarUsuarios();
+
+  res.status(201).json({ message: 'Usuario registrado correctamente' });
+});
+
+
+// === Iniciar servidor ===
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`✅ Backend corriendo en http://localhost:${PORT}`);
+  console.log(`🚀 Backend corriendo en http://localhost:${PORT}`);
 });
