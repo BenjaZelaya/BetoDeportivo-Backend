@@ -8,23 +8,27 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Configurar multer para subir imágenes
+// 📁 Ruta absoluta al JSON
+const archivoProductos = path.join(__dirname, 'productos.json');
+
+// 📁 Carpeta de imágenes
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
+
+// 📸 Configurar Multer
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    const uploadDir = path.join(__dirname, 'uploads');
-    if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
-    cb(null, uploadDir);
-  },
+  destination: (req, file, cb) => cb(null, uploadDir),
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
-    const nombreArchivo = `${Date.now()}${ext}`;
-    cb(null, nombreArchivo);
+    cb(null, `${Date.now()}${ext}`);
   }
 });
 const upload = multer({ storage });
 
-// Cargar y guardar productos
-const archivoProductos = path.join(__dirname, 'productos.json');
+// 📂 Servir imágenes estáticas
+app.use('/uploads', express.static(uploadDir));
+
+// 🔁 Productos
 let productos = [];
 let idCounter = 1;
 
@@ -42,42 +46,30 @@ function guardarProductos() {
 }
 cargarProductos();
 
-// Servir imágenes
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// 📍 Obtener todos los productos
+app.get('/api/productos', (req, res) => res.json(productos));
 
-// Obtener todos los productos
-app.get('/api/productos', (req, res) => {
-  res.json(productos);
-});
-
-// Buscar productos por nombre
+// 🔍 Buscar por nombre
 app.get('/api/productos/buscar', (req, res) => {
   const { q } = req.query;
-  if (!q || q.trim() === '') {
-    return res.status(400).json({ message: 'Término de búsqueda requerido' });
-  }
-
-  const resultado = productos.filter(p =>
-    p.nombre.toLowerCase().includes(q.toLowerCase())
-  );
-
+  if (!q || q.trim() === '') return res.status(400).json({ message: 'Término requerido' });
+  const resultado = productos.filter(p => p.nombre.toLowerCase().includes(q.toLowerCase()));
   res.json(resultado);
 });
 
-// Obtener producto por ID
+// 🔎 Por ID
 app.get('/api/productos/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const producto = productos.find(p => p.id === id);
+  const producto = productos.find(p => p.id === parseInt(req.params.id));
   if (!producto) return res.status(404).json({ message: 'Producto no encontrado' });
   res.json(producto);
 });
 
-// Crear nuevo producto
+// ➕ Crear producto
 app.post('/api/productos', upload.array('imagenes', 5), (req, res) => {
   const { nombre, descripcion, precio, stock, sexo, categoria, color, portadaIndex } = req.body;
 
   if (!nombre || !descripcion || !precio || !stock || !sexo || !categoria || !color || req.files.length === 0) {
-    return res.status(400).json({ message: 'Todos los campos son obligatorios (incluidas imágenes)' });
+    return res.status(400).json({ message: 'Todos los campos son obligatorios' });
   }
 
   const imagenes = req.files.map(file => `/uploads/${file.filename}`);
@@ -101,14 +93,13 @@ app.post('/api/productos', upload.array('imagenes', 5), (req, res) => {
     portada: imagenes[indexPortada]
   };
 
-
   productos.push(nuevoProducto);
   guardarProductos();
 
   res.status(201).json(nuevoProducto);
 });
 
-// Editar producto
+// ✏️ Editar producto
 app.put('/api/productos/:id', upload.array('imagenes', 5), (req, res) => {
   const id = parseInt(req.params.id);
   const producto = productos.find(p => p.id === id);
@@ -125,11 +116,9 @@ app.put('/api/productos/:id', upload.array('imagenes', 5), (req, res) => {
   producto.categoria = categoria ? categoria.toLowerCase() : producto.categoria;
   producto.color = color ? color.toLowerCase() : producto.color;
 
-
   if (req.files && req.files.length > 0) {
     const nuevasImagenes = req.files.map(file => `/uploads/${file.filename}`);
     producto.imagenes = nuevasImagenes;
-
     const indexPortada = parseInt(portadaIndex);
     producto.portada = (!isNaN(indexPortada) && indexPortada >= 0 && indexPortada < nuevasImagenes.length)
       ? nuevasImagenes[indexPortada]
@@ -140,7 +129,7 @@ app.put('/api/productos/:id', upload.array('imagenes', 5), (req, res) => {
   res.json(producto);
 });
 
-// Eliminar producto
+// 🗑️ Eliminar producto
 app.delete('/api/productos/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const index = productos.findIndex(p => p.id === id);
@@ -148,12 +137,11 @@ app.delete('/api/productos/:id', (req, res) => {
 
   productos.splice(index, 1);
   guardarProductos();
-
   res.json({ message: 'Producto eliminado correctamente' });
 });
 
-// Iniciar servidor
+// 🚀 Iniciar servidor
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Backend corriendo en http://localhost:${PORT}`);
+  console.log(`✅ Backend corriendo en http://localhost:${PORT}`);
 });
