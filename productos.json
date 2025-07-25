@@ -1,0 +1,349 @@
+[
+  {
+    "id": 1,
+    "nombre": "Nike Air Force 1 '07 (White)",
+    "descripcion": "Inspirados en el original que se lanzó en 1985, los Air Jordan 1 Low ofrecen un estilo clásico impecable que se ve familiar, pero siempre viene renovado. Con un diseño icónico que combina a la perfección con cualquier look, Estas zapatillas garantizan que siempre lucirás excelente.",
+    "precio": 199.999,
+    "stock": 4,
+    "imagenUrl": "/uploads/1752361033720.jpg",
+    "categoria": "Calzado",
+    "sexo": "Hombre",
+    "imagenes": [
+      "/uploads/1752609120260.jpg"
+    ],
+    "portada": "/uploads/1752609120260.jpg",
+    "title": "Nike Air Force 1 '07 (White)",
+    "color": "Blanco"
+  },
+  {
+    "id": 2,
+    "nombre": "Air Jordan 1 Mid",
+    "descripcion": "Inspirada en el AJ1 original, esta edición de corte mid mantiene el look icónico que te encanta, y los colores selectos y el cuero impecable le dan una identidad distintiva.",
+    "precio": 229.999,
+    "stock": 2,
+    "imagenUrl": "/uploads/1752451161966.jpg",
+    "sexo": "hombre",
+    "categoria": "calzado",
+    "imagenes": [
+      "/uploads/1752718255227.jpg",
+      "/uploads/1752718255228.jpg",
+      "/uploads/1752718255229.jpg",
+      "/uploads/1752718255230.jpg"
+    ],
+    "portada": "/uploads/1752718255227.jpg",
+    "title": "Air Jordan 1 Mid",
+    "color": "rojo"
+  },
+  {
+    "id": 3,
+    "nombre": "Chelsea FC local 2025/26 Match",
+    "descripcion": "Rinde homenaje a la historia del club y al animado espíritu londinense en constante evolución con la primera equipación del Chelsea FC 2025/26. Esta camiseta Authentic cuenta con el clásico color azul del Chelsea y un sutil estampado inspirado en la arquitectura de la ciudad.",
+    "precio": 179.999,
+    "stock": 22,
+    "sexo": "Hombre",
+    "categoria": "Ropa",
+    "imagenUrl": "/uploads/1752455640122.jpg",
+    "imagenes": [
+      "/uploads/1752609187283.jpg"
+    ],
+    "portada": "/uploads/1752609187283.jpg",
+    "title": "Chelsea FC local 2025/26 Match",
+    "color": "Azul"
+  },
+  {
+    "id": 4,
+    "nombre": "Nike Winflo 10",
+    "descripcion": "Ponte el Winflo 10, un recorrido equilitopdo que impulsará tu carrera, ya sea que seas una persona rutinaria que registra sus kilómetros semanales, un amateur con la esperanza de convertir la curiosidad en rutina o simplemente acompañes a un amigo a una carrera esporádica de fin de semana. El calzado de soporte neutro con Nike Air elástico y más espacio en el antepié brinda una sensación cómoda y amortiguada. Está listo para tu carrera, cuando sientas el llamado de la carretera.",
+    "precio": 113.999,
+    "stock": 10,
+    "sexo": "Hombre",
+    "categoria": "Deportes",
+    "imagenUrl": "/uploads/1752531542956.jpg",
+    "imagenes": [
+      "/uploads/1752609403554.jpg"
+    ],
+    "portada": "/uploads/1752609403554.jpg",
+    "title": "Nike Winflo 10",
+    "color": "Blanco"
+  },
+  {
+    "id": 5,
+    "nombre": "Nike Dunk Low Retro",
+    "descripcion": "Los \"Be True To Your School\" Pack, que reconocen las raíces de los Dunk como las zapatillas principales del equipo universitario, se inspiran en la campaña publicitaria original. Los colores representan las universidades más importantes y el cuero impecable tiene la cantidad perfecta de brillo que los hacen ganadores. Así que amárrate los cordoness y luce ese espíritu universitario. ¿Te apuntas?",
+    "precio": 139.999,
+    "stock": 4,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenUrl": "/uploads/1752531646661.jpg",
+    "imagenes": [
+      "/uploads/1752609279486.jpg"
+    ],
+    "portada": "/uploads/1752609279486.jpg",
+    "title": "Nike Dunk Low Retro",
+    "color": "Azul"
+  },
+  {
+    "id": 6,
+    "nombre": "Nike Air Max 90 Drift",
+    "descripcion": "Los Air Max 90 Drift añaden una opción más duradera a tu colección de zapatillas. Su diseño con bloques de color acentúa las diferentes texturas y capas, incluyendo la tela ripstop resistente y la goma en combinación con cuero auténtico y sintético. Además, la amortiguación Max Air y la suela exterior tipo waffle ofrecen comodidad tanto para la calle como para la naturaleza.",
+    "precio": 279.999,
+    "stock": 3,
+    "sexo": "Hombre",
+    "categoria": "Calzado",
+    "imagenUrl": "/uploads/1752531771843.jpg",
+    "imagenes": [
+      "/uploads/1752609222700.jpg"
+    ],
+    "portada": "/uploads/1752609222700.jpg",
+    "title": "Nike Air Max 90 Drift",
+    "color": "Verde"
+  },
+  {
+    "id": 7,
+    "nombre": "Nike Mercurial Vapor 16 Club",
+    "descripcion": "Ya sea que estés empezando o juegues para divertirte, los tapones Club te llevan a la cancha sin comprometer la calidad. Los Vapor 16 están diseñados pensando en la velocidad. ¿Combinar velocidad con toque dla pelota y comodidad? Llegó la hora del gol.",
+    "precio": 109.999,
+    "stock": 6,
+    "sexo": "hombre",
+    "categoria": "deportes",
+    "imagenUrl": "/uploads/1752531968998.jpg",
+    "imagenes": [
+      "/uploads/1752609237861.jpg"
+    ],
+    "portada": "/uploads/1752609237861.jpg",
+    "title": "Nike Mercurial Vapor 16 Club",
+    "color": "negro"
+  },
+  {
+    "id": 8,
+    "nombre": "Nike Tiempo Legend 10 Club",
+    "descripcion": "Incluso las leyendas encuentran la manera de evolucionar. Si apenas empezás o solo jugás para divertirte, la versión más reciente de este botín de fútbol Club te lleva a la cancha sin comprometer la calidad. El cuero sintético se adapta al pie y no se estira de más, así ofrece un mejor control. Más ligero y elegante que cualquier otro Tiempo hasta la fecha, el Legend 10 es para cualquier posición en el campo, ya sea que des un pase milimétrico a través de la defensa o regreses para detener una escapada.",
+    "precio": 109.999,
+    "stock": 7,
+    "sexo": "hombre",
+    "categoria": "deportes",
+    "imagenUrl": "/uploads/1752532031404.jpg",
+    "imagenes": [
+      "/uploads/1752609254566.jpg"
+    ],
+    "portada": "/uploads/1752609254566.jpg",
+    "title": "Nike Tiempo Legend 10 Club",
+    "color": "negro"
+  },
+  {
+    "id": 9,
+    "nombre": "Nike Tiempo Legend 10 Academy",
+    "descripcion": "Incluso las leyendas encuentran la manera de evolucionar. La última versión de este calzado Academy, diseñada para llevar tu juego al siguiente nivel, cuenta con el nuevo cuero con diseño avanzado FlyTouch Lite. Más suave que el cuero natural, se adapta a tu pie y no se estira demasiado, para que puedas marcar el ritmo de tu juego. Más ligero y elegante que cualquier otro Tiempo hasta la fecha, el Legend 10 es para cualquier posición en el campo, ya sea que estés enviando un pase milimétrico a través de la defensa o mientras regresas para detener una escapada. Esta versión cuenta con tracción Anti-Clog en la suela para impedir que el barro se adhiera.",
+    "precio": 169.999,
+    "stock": 8,
+    "sexo": "hombre",
+    "categoria": "deportes",
+    "imagenUrl": "/uploads/1752532077714.jpg",
+    "imagenes": [
+      "/uploads/1752609298983.jpg"
+    ],
+    "portada": "/uploads/1752609298983.jpg",
+    "title": "Nike Tiempo Legend 10 Academy",
+    "color": "negro"
+  },
+  {
+    "id": 10,
+    "nombre": "Nike Phantom GX 2 Club",
+    "descripcion": "Ya sea que estés empezando o juegues para divertirte, los tapones Club te llevan a la cancha sin comprometer la calidad. Confeccionados con los goles en mente, los Phantom GX 2 Club tienen una textura adherente que cubre el área de impacto de los tapones y, además, cuentan con una tracción confiable para ayudar a guiar tu agilidad sin precedentes.",
+    "precio": 109.999,
+    "stock": 3,
+    "sexo": "hombre",
+    "categoria": "deportes",
+    "imagenUrl": "/uploads/1752532139917.jpg",
+    "imagenes": [
+      "/uploads/1752609321399.jpg"
+    ],
+    "portada": "/uploads/1752609321399.jpg",
+    "title": "Nike Phantom GX 2 Club",
+    "color": "negro"
+  },
+  {
+    "id": 11,
+    "nombre": "Nike Streetgato",
+    "descripcion": "Domina las calles con los Nike Streetgato. Combina detalles de diseño de rendimiento con un estilo de moda urbana para que puedas jugar en cualquier momento.",
+    "precio": 169.999,
+    "stock": 5,
+    "sexo": "hombre",
+    "categoria": "deportes",
+    "imagenUrl": "/uploads/1752532222131.jpg",
+    "imagenes": [
+      "/uploads/1752609386121.jpg"
+    ],
+    "portada": "/uploads/1752609386121.jpg",
+    "title": "Nike Streetgato",
+    "color": "naranja"
+  },
+  {
+    "id": 12,
+    "nombre": "Nike Lunargato II",
+    "descripcion": "Los Nike Lunargato II son ideales para jugar fútbol rápido. La suavidad del cuero en el antepié produce una sensación agradable y natural para realizar toques precisos. La amortiguación en la entresuela se siente elástica y responsiva, y la suela de goma te brinda tracción para realizar cortes rápidos en superficies interiores.",
+    "precio": 219.999,
+    "stock": 3,
+    "sexo": "hombre",
+    "categoria": "deportes",
+    "imagenUrl": "/uploads/1752532311389.jpg",
+    "imagenes": [
+      "/uploads/1752609371585.jpg"
+    ],
+    "portada": "/uploads/1752609371585.jpg",
+    "title": "Nike Lunargato II",
+    "color": "naranja"
+  },
+  {
+    "id": 13,
+    "nombre": "Camiseta Titular River Plate 25/26 (Versión Jugador)",
+    "descripcion": "Camiseta de River Plate lista para el terreno de juego que celebra un hito importante.\r\nSe cumple una década desde que River Plate se coronó campeón de Sudamérica en 2015. Esta camiseta titular auténtica de adidas se inspira en la camiseta que el equipo vistió durante esa memorable temporada. Las 3 Tiras horizontales envuelven las mangas, mientras que el famoso fajín destaca en la parte delantera y trasera. Su construcción ultramoderna, centrada en el rendimiento, mantendrá al equipo de hoy jugando un fútbol brillante.",
+    "precio": 199.999,
+    "stock": 140,
+    "sexo": "hombre",
+    "categoria": "ropa",
+    "imagenUrl": "/uploads/1752532489449.jpg",
+    "imagenes": [
+      "/uploads/1752609353752.jpg"
+    ],
+    "portada": "/uploads/1752609353752.jpg",
+    "title": "Camiseta Titular River Plate 25/26 (Versión Jugador)",
+    "color": "blanco"
+  },
+  {
+    "id": 14,
+    "nombre": " Camiseta Alternativa River Plate 25/26 (Hombre)",
+    "descripcion": "Una camiseta de hincha creada para llevar a River Plate a nuevas alturas.\r\nCelebrá un momento emblemático de la rica historia de River Plate con esta camiseta alternativa adidas. Tomando prestadas sus rayas rojas y negras del famoso globo aerostático que aterrizó en el campo durante la celebración del título del club en 1975, seguro que te despierta la nostalgia de un pasado glorioso. La tecnología AEROREADY, que controla la humedad, te mantiene cómodo y el escudo tejido realza tu orgullo futbolero.",
+    "precio": 109.999,
+    "stock": 200,
+    "sexo": "hombre",
+    "categoria": "ropa",
+    "imagenUrl": "/uploads/1752532543854.jpg",
+    "imagenes": [
+      "/uploads/1752609346135.jpg"
+    ],
+    "portada": "/uploads/1752609346135.jpg",
+    "title": " Camiseta Alternativa River Plate 25/26 (Hombre)",
+    "color": "rojo"
+  },
+  {
+    "id": 15,
+    "nombre": "Zapatillas Campus 00s X Minecraft (Niños)",
+    "descripcion": "Tanto para explorar el barrio o simplemente el patio trasero, estas zapatillas para niños de adidas están hechas para la aventura. Al igual que en Minecraft, donde creás tu propio mundo bloque a bloque, estas zapatillas dejan volar la imaginación de los niños. Presentan colores y detalles de Creeper para que los niños se sientan parte de la acción. Los cordones elásticos hacen que sean fáciles de poner y sacar sin tener que atar los cordones.",
+    "precio": 119.999,
+    "stock": 8,
+    "sexo": "niño",
+    "categoria": "calzado",
+    "imagenes": [
+      "/uploads/1752607995907.jpg"
+    ],
+    "portada": "/uploads/1752607995907.jpg",
+    "title": "Zapatillas Campus 00s X Minecraft (Niños)",
+    "color": "verde"
+  },
+  {
+    "id": 16,
+    "nombre": "Zapatilla Superstar",
+    "descripcion": "Vuelven las emblemáticas zapatillas adidas Superstar. Pisá fuerte con 50 años de estilo deportivo y urbano con estas zapatillas bajas. El exterior de cuero liso y la puntera de caucho evocan recuerdos de las canchas de básquet y las calles de la ciudad. La lengüeta y el cuello acolchados añaden comodidad para usarlas todo el día, mientras que la suela de caucho texturizada te da un agarre increíble. Tanto si vas a tirar al aro de básquet como a salir por la ciudad, las zapatillas Superstar de adidas tienen la versatilidad y el atractivo retro necesarios para llevarte hasta ahí con un estilo clásico.",
+    "precio": 179.999,
+    "stock": 8,
+    "sexo": "mujer",
+    "categoria": "calzado",
+    "imagenes": [
+      "/uploads/1752608473555.jpg",
+      "/uploads/1752608473556.jpg"
+    ],
+    "portada": "/uploads/1752608473555.jpg",
+    "title": "Zapatilla Superstar",
+    "color": "blanco"
+  },
+  {
+    "id": 17,
+    "nombre": "Botines sin cordones F50 Elite de terreno firme",
+    "title": "Botines sin cordones F50 Elite de terreno firme",
+    "descripcion": "Encontrá tu rapidez para expresarte de verdad en el campo. Sentí la adrenalina con los botines adidas F50, diseñados para la velocidad. Botines de fútbol Elite sin cordones con empeine Fibertouch fino, cuello adidas PRIMEKNIT para sujeción óptima y textura Sprintweb 3D para ayudar a mantener la pelota cerca. La suela Sprintframe 360, diseñada para campos de césped sintético, soporta un ritmo implacable.",
+    "precio": 399.999,
+    "stock": 30,
+    "sexo": "hombre",
+    "categoria": "calzado",
+    "imagenes": [
+      "/uploads/1752692433465.jpg",
+      "/uploads/1752692433466.jpg",
+      "/uploads/1752692433469.jpg",
+      "/uploads/1752692433470.jpg"
+    ],
+    "portada": "/uploads/1752692433465.jpg",
+    "color": "verde"
+  },
+  {
+    "id": 18,
+    "nombre": "FC Barcelona 2024/25 Stadium",
+    "title": "FC Barcelona 2024/25 Stadium",
+    "descripcion": "Un logotipo Swoosh. Una ciudad. Un objetivo. Usada por los equipos masculino y femenino del Barcelona, este camiseta se centra en promover el deporte que amamos. El diseño de Swoosh representa la unidad entre del equipo y levanta la voz para rendir homenaje. Juntos podemos inspirar a la próxima generación de atletas. Más que un club.\r\n\r\n\r\nNos levantamos en equipo...",
+    "precio": 83.999,
+    "stock": 5,
+    "sexo": "hombre",
+    "categoria": "ropa",
+    "imagenes": [
+      "/uploads/1752714065959.jpg",
+      "/uploads/1752714065960.jpg",
+      "/uploads/1752714065961.jpg",
+      "/uploads/1752714065967.jpg"
+    ],
+    "portada": "/uploads/1752714065959.jpg",
+    "color": "rojo"
+  },
+  {
+    "id": 19,
+    "nombre": "Jordan Essentials",
+    "title": "Jordan Essentials",
+    "descripcion": "Hay una razón por la que llamamos a esta campera \"imprescindible\". El nylon suave y repelente al agua y los paneles de malla mantienen la ligereza y la ventilación. El ajuste amplio, los estampados llamativos y el cordón de ajuste del dobladillo añaden el estilo elegante que conoces y adoras.",
+    "precio": 199.999,
+    "stock": 45,
+    "sexo": "hombre",
+    "categoria": "ropa",
+    "imagenes": [
+      "/uploads/1752717003846.jpg",
+      "/uploads/1752717003847.jpg",
+      "/uploads/1752717003852.jpg",
+      "/uploads/1752717003853.jpg",
+      "/uploads/1752717003858.jpg"
+    ],
+    "portada": "/uploads/1752717003846.jpg",
+    "color": "amarillo"
+  },
+  {
+    "id": 20,
+    "nombre": "Zapatillas de Entrenamiento Amplimove",
+    "title": "Zapatillas de Entrenamiento Amplimove",
+    "descripcion": "Zapatillas específicas para entrenamiento, fabricadas en parte con materiales reciclados.\r\nSi aspirás a entrenar como un profesional o simplemente a elevar tu entrenamiento, estas zapatillas de entrenamiento adidas te ayudarán a liberar tu potencial atlético. Con un exterior de malla sin costuras y revestimientos de TPU por zonas que abrazan tu pie, estas zapatillas ligeras pero de soporte te mantienen estable en movimientos multidireccionales. Una mediasuela esculpida añade comodidad y flexibilidad, mientras que la suela en todas las direcciones se agarra al suelo para impulsar tu rendimiento.",
+    "precio": 109.999,
+    "stock": 9,
+    "sexo": "mujer",
+    "categoria": "deportes",
+    "color": "rosa",
+    "imagenes": [
+      "/uploads/1752975532142.jpg",
+      "/uploads/1752975532144.jpg",
+      "/uploads/1752975532148.jpg"
+    ],
+    "portada": "/uploads/1752975532142.jpg"
+  },
+  {
+    "id": 21,
+    "nombre": "Campera ligera con 2,5 capas Terrex Xperior Climaproof",
+    "title": "Campera ligera con 2,5 capas Terrex Xperior Climaproof",
+    "descripcion": "Cualquier clima es bueno para correr con esta campera de trail running adidas Terrex en tu mochila. Su corte ajustado mantiene un perfil estilizado, y su estructura de 2,5 capas la hace ligera y plegable. Bolsillos con cierre que mantienen seguras llaves, tarjetas o teléfono para que te concentres en el camino. La tecnología CLIMAPROOF te protege del clima y ayuda a eliminar el sudor para que puedas rendir sin restricciones y con comodidad.",
+    "precio": 209.999,
+    "stock": 12,
+    "sexo": "mujer",
+    "categoria": "ropa",
+    "color": "naranja",
+    "imagenes": [
+      "/uploads/1752975966297.jpg",
+      "/uploads/1752975966298.jpg",
+      "/uploads/1752975966299.jpg"
+    ],
+    "portada": "/uploads/1752975966297.jpg"
+  }
+]
