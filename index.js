@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
-    const nombreArchivo = `${Date.now()}${ext}`;
+    const nombreArchivo = ${Date.now()}${ext};
     cb(null, nombreArchivo);
   }
 });
@@ -77,7 +77,7 @@ app.post('/api/productos', upload.array('imagenes', 5), (req, res) => {
     return res.status(400).json({ message: 'Todos los campos son obligatorios (incluidas imágenes)' });
   }
 
-  const imagenes = req.files.map(file => `/uploads/${file.filename}`);
+  const imagenes = req.files.map(file => /uploads/${file.filename});
   const indexPortada = parseInt(portadaIndex);
 
   if (isNaN(indexPortada) || indexPortada < 0 || indexPortada >= imagenes.length) {
@@ -121,7 +121,7 @@ app.put('/api/productos/:id', upload.array('imagenes', 5), (req, res) => {
   producto.color = color ? color.toLowerCase() : producto.color;
 
   if (req.files && req.files.length > 0) {
-    const nuevasImagenes = req.files.map(file => `/uploads/${file.filename}`);
+    const nuevasImagenes = req.files.map(file => /uploads/${file.filename});
     producto.imagenes = nuevasImagenes;
 
     const indexPortada = parseInt(portadaIndex);
@@ -205,5 +205,5 @@ app.post('/api/register', (req, res) => {
 // === Iniciar servidor ===
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Backend corriendo en http://localhost:${PORT}`);
+  console.log(🚀 Backend corriendo en http://localhost:${PORT});
 });
